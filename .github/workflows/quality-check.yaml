@@ -12,3 +12,6 @@ jobs:
           channel: 'stable'
       - name: update packages
         run: flutter pub get
+
+      - name: check format
+        run: flutter format --line-lenght 120 --set-exit-if-changed ./lib
