@@ -1,6 +1,6 @@
 import 'dart:core';
 
-final String name = 'Adi'; // runtime constants
+const String name = 'Adi'; // runtime constants
 const String car = 'test'; // compile-time constans
 const String car1 = 'test'; // compile-time constans
 const String car2 = 'test'; // compile-time constans
@@ -45,7 +45,7 @@ void main() {
   // toList
 
   final items = list.map((String element) => element).toList();
-  print(items);
+  //print(items);
 
   // list.expand((element) => null)
 }
