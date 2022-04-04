@@ -39,12 +39,12 @@ void main() {
   //   print(item);
   // }
 
-  List<String> list = <String>["Cosmin", "Razvan"];
+  //List<String> list = <String>["Cosmin", "Razvan"];
   // map
   // expand
   // toList
 
-  final items = list.map((String element) => element).toList();
+  //final items = list.map((String element) => element).toList();
   //print(items);
 
   // list.expand((element) => null)
