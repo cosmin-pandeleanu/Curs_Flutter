@@ -31,8 +31,8 @@ class _HomePageState extends State<HomePage> {
   int _generatedNumber = Random().nextInt(100) + 1;
   bool _textFieldEnabled = true;
 
-  showAlertDialog(BuildContext context) {
-    Widget tryAgainButton = TextButton(
+  void showAlertDialog(BuildContext context) {
+    final Widget tryAgainButton = TextButton(
       onPressed: () {
         setState(() {
           _feedback = '';
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       },
       child: const Text('Try again!'),
     );
-    Widget okButton = TextButton(
+    final Widget okButton = TextButton(
       onPressed: () {
         setState(() {
           _textFieldEnabled = false;
@@ -55,20 +55,21 @@ class _HomePageState extends State<HomePage> {
       child: const Text('OK'),
     );
 
-    AlertDialog alert = AlertDialog(
-      title: const Text("You guessed right"),
-      content: Text("It was $_generatedNumber"),
-      actions: [
+    final AlertDialog alert = AlertDialog(
+      title: const Text('You guessed right'),
+      content: Text('It was $_generatedNumber'),
+      actions: <Widget>[
         tryAgainButton,
         okButton,
       ],
     );
 
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alert;
-        });
+    showDialog<BuildContext>(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 
   @override
@@ -86,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                 "I'm thinking of a number between 1 and 100.",
                 style: TextStyle(
                   fontSize: 25,
-                  fontFamily: "",
+                  fontFamily: '',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -110,7 +111,7 @@ class _HomePageState extends State<HomePage> {
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                boxShadow: [
+                boxShadow: <BoxShadow>[
                   BoxShadow(
                     color: Colors.grey,
                     spreadRadius: 2,
@@ -122,7 +123,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: <Widget>[
                   const Text(
-                    "Try a number!",
+                    'Try a number!',
                     style: TextStyle(
                       fontSize: 35,
                       color: Colors.grey,
@@ -136,11 +137,12 @@ class _HomePageState extends State<HomePage> {
                       FilteringTextInputFormatter.digitsOnly,
                     ],
                   ),
-                  Builder(builder: (BuildContext context) {
-                    return ElevatedButton(
+                  Builder(
+                    builder: (BuildContext context) {
+                      return ElevatedButton(
                         onPressed: () {
                           if (_textButton == 'Guess' && _controller.text != '') {
-                            int value = int.parse(_controller.text);
+                            final int value = int.parse(_controller.text);
                             if (value < _generatedNumber) {
                               setState(() {
                                 _feedback = 'You tried $value\nTry higher';
@@ -155,15 +157,17 @@ class _HomePageState extends State<HomePage> {
                               });
                             }
                             _controller.clear();
-                          } else if (_textButton == "Reset") {
+                          } else if (_textButton == 'Reset') {
                             setState(() {
                               _textFieldEnabled = true;
-                              _textButton = "Guess";
+                              _textButton = 'Guess';
                             });
                           }
                         },
-                        child: Text(_textButton));
-                  }),
+                        child: Text(_textButton),
+                      );
+                    },
+                  ),
                 ],
               ),
             )

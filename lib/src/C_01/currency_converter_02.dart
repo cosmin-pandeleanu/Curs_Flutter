@@ -35,28 +35,31 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           children: <Widget>[
             Image.network(
-                'https://www.stiridinlume.ro/wp-content/uploads/2021/08/Bancnota-de-100-de-lei-este-cea-mai-falsificata-bancnota-romaneasca.jpg'),
+              'https://www.stiridinlume.ro/wp-content/uploads/2021/08/Bancnota-de-100-de-lei-este-cea-mai-falsificata-bancnota-romaneasca.jpg',
+            ),
             Container(
-                padding: const EdgeInsets.all(16),
-                child: TextFormField(
-                  controller: _controller,
-                  keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                  decoration: const InputDecoration(
-                    hintText: 'enter the amount in EUR',
-                  ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'please enter a number';
-                    }
-                    final double? result = double.tryParse(value);
-                    if (result == null) {
-                      return 'please enter a number';
-                    }
-                    return null;
-                  },
-                )),
-            Builder(builder: (BuildContext context) {
-              return ElevatedButton(
+              padding: const EdgeInsets.all(16),
+              child: TextFormField(
+                controller: _controller,
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                decoration: const InputDecoration(
+                  hintText: 'enter the amount in EUR',
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'please enter a number';
+                  }
+                  final double? result = double.tryParse(value);
+                  if (result == null) {
+                    return 'please enter a number';
+                  }
+                  return null;
+                },
+              ),
+            ),
+            Builder(
+              builder: (BuildContext context) {
+                return ElevatedButton(
                   onPressed: () {
                     final bool valid = Form.of(context)!.validate();
                     if (valid) {
@@ -66,8 +69,10 @@ class _HomePageState extends State<HomePage> {
                       });
                     }
                   },
-                  child: const Text('Convert!'));
-            }),
+                  child: const Text('Convert!'),
+                );
+              },
+            ),
             Text(_result)
           ],
         ),

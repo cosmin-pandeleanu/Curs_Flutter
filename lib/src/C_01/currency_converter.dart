@@ -42,12 +42,12 @@ class HomePage extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          children: [
+          children: <Widget>[
             const Image(
-              image: NetworkImage("https://i0.1616.ro/media/2/2621/33243/20450766/1/9v8a2732.jpg?width=535"),
+              image: NetworkImage('https://i0.1616.ro/media/2/2621/33243/20450766/1/9v8a2732.jpg?width=535'),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 20.0, top: 10.0, right: 20.0, bottom: 10.0),
+              margin: const EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 10),
               child: TextFormField(
                 controller: myController,
                 decoration: InputDecoration(
@@ -64,7 +64,7 @@ class HomePage extends State<MyHomePage> {
                     amount = '';
                     valid = true;
                   } else {
-                    amount = (double.parse(myController.text) * conversionRate).toStringAsFixed(2) + ' RON';
+                    amount = '${(double.parse(myController.text) * conversionRate).toStringAsFixed(2)} RON';
                     valid = false;
                   }
                 });
@@ -73,10 +73,12 @@ class HomePage extends State<MyHomePage> {
                 primary: const Color.fromARGB(230, 215, 206, 206),
                 onPrimary: Colors.black87,
               ),
-              child: const Text('CONVERT!',
-                  style: TextStyle(
-                    fontSize: 18,
-                  )),
+              child: const Text(
+                'CONVERT!',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
             ),
             Text(
               amount,

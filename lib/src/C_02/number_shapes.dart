@@ -40,39 +40,39 @@ class _HomePageState extends State<HomePage> {
     final String _str = 'Number $_inputNumber is ';
     if (_isPerfectSquare(_inputNumber)) {
       if (_isPerfectCube(_inputNumber)) {
-        return _str + 'both SQUARE and TRIANGULAR.';
+        return '${_str}both SQUARE and TRIANGULAR.';
       } else {
-        return _str + 'SQUARE.';
+        return '${_str}SQUARE.';
       }
     } else if (_isPerfectCube(_inputNumber)) {
-      return _str + 'CUBE.';
+      return '${_str}CUBE.';
     }
-    return _str + 'neither TRIANGULAR or SQUARE.';
+    return '${_str}neither TRIANGULAR or SQUARE.';
   }
 
   @override
   Widget build(BuildContext context) {
     return Form(
-        child: Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text('Number Shapes'),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text('Number Shapes'),
+          ),
         ),
-      ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            margin: const EdgeInsets.all(20),
-            child: const Text(
-              'Please input a number to see if it is square or triangular.',
-              style: TextStyle(
-                fontSize: 22,
+        body: Column(
+          children: <Widget>[
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: const Text(
+                'Please input a number to see if it is square or triangular.',
+                style: TextStyle(
+                  fontSize: 22,
+                ),
               ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(20),
-            child: TextFormField(
+            Container(
+              margin: const EdgeInsets.all(20),
+              child: TextFormField(
                 keyboardType: TextInputType.number,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly,
@@ -86,25 +86,27 @@ class _HomePageState extends State<HomePage> {
                       });
                     }
                   });
-                }),
-          ),
-        ],
+                },
+              ),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            showDialog<BuildContext>(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text('$_inputNumber'),
+                  content: Text(_message()),
+                );
+              },
+            );
+            _controller.clear();
+          },
+          child: const Icon(Icons.check),
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text('$_inputNumber'),
-                content: Text(_message()),
-              );
-            },
-          );
-          _controller.clear();
-        },
-        child: const Icon(Icons.check),
-      ),
-    ));
+    );
   }
 }
