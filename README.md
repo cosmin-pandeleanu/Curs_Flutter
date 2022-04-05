@@ -1,16 +1,11 @@
-# curs_flutter
+#### Atelierul Digital - Flutter
 
-A new Flutter project.
+* [Homework 1](curs_flutter/lib/src/C_01)
+    - [x] [Currency convertor](curs_flutter/lib/src/C_01/currency_converter.dart)
 
-## Getting Started
+* [Homework 2](curs_flutter/lib/src/C_02)
+    - [x] [Number shapes](curs_flutter/lib/src/C_02/number_shapes.dart)
+    - [x] [Guess my number](curs_flutter/lib/src/C_02/guess_my_number.dart)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* [Homework 3](curs_flutter/lib/src/C_03)
+    - [x] [Basic Phrases](curs_flutter/lib/src/C_03/basic_phrases.dart)
