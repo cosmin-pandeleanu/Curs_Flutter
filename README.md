@@ -1,7 +1,7 @@
 #### Atelierul Digital - Flutter
 
 * [Homework 1](curs_flutter_/lib/src/C_01)
-    - [x] [Currency convertor](curs_flutter_/lib/src/C_01/currency_converter.dart)
+    - [x] [Currency convertor](lib/src/C_01/currency_converter.dart)
 
 * [Homework 2](curs_flutter_/lib/src/C_02)
     - [x] [Number shapes](curs_flutter_/lib/src/C_02/number_shapes.dart)
