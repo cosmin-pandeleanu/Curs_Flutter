@@ -11,4 +11,4 @@
     - [x] [Basic Phrases](lib/src/C_03/basic_phrases.dart)
 
 * [Homework 4](lib/src/C_04)
-    - [x] [Basic Phrases](lib/src/C_04/tic_tac_toe.dart)
+    - [x] [Tic Tac Toe](lib/src/C_04/tic_tac_toe.dart)
